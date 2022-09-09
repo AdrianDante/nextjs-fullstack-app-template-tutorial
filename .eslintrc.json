@@ -1,3 +1,10 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
+  /* globals/React: when using react since v17 or so you dont necesarily need to import react into eachone of your components*/
+  "globals": { "React": "readonly" },
+  "rules": {
+    /* turn off with 0, set to warning with 1, set to error with 2, and with some rules  you can customize*/
+    /* in this case prefixing a var with _ will avoid unused var rule */
+    "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }]
+  }
 }
